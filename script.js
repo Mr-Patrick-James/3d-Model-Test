@@ -70,3 +70,24 @@ function animate() {
 
 initParticles();
 animate();
+
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+function closeMobileMenu() {
+  hamburger.classList.remove("open");
+  mobileMenu.classList.remove("open");
+}
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+});
+
+hamburger.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    hamburger.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  }
+});
